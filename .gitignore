@@ -1,0 +1,6 @@
+*.npy
+*.pyc
+*.xml
+.idea/
+images/
+models/
