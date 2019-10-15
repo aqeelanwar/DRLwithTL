@@ -25,7 +25,21 @@ AirSim is used to interface between the Python code and Unreal Engine simulated 
 If you find this repository useful for your research please use the following bibtex citation
 
 ```
-robustness
+@ARTICLE{2019arXiv191005547A,
+       author = {{Anwar}, Aqeel and {Raychowdhury}, Arijit},
+        title = "{Autonomous Navigation via Deep Reinforcement Learning for Resource Constraint Edge Nodes using Transfer Learning}",
+      journal = {arXiv e-prints},
+     keywords = {Computer Science - Machine Learning, Statistics - Machine Learning},
+         year = "2019",
+        month = "Oct",
+          eid = {arXiv:1910.05547},
+        pages = {arXiv:1910.05547},
+archivePrefix = {arXiv},
+       eprint = {1910.05547},
+ primaryClass = {cs.LG},
+       adsurl = {https://ui.adsabs.harvard.edu/abs/2019arXiv191005547A},
+      adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+}
 ```
 
 ## Authors
