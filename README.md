@@ -19,9 +19,17 @@ The provided requirements.txt file can be used to install all the required packa
 ### Run the simulated environment
 AirSim is used to interface between the Python code and Unreal Engine simulated environments. You can either use Unreal Engine to manually design the environment or you can download one from the link below
 
-* [Indoor Long Environment](www.google.com)
+* [Indoor Long Environment](https://www.google.com)
 
 ## Citing
 If you find this repository useful for your research please use the following bibtex citation
 
 ```
+robustness
+```
+
+## Authors
+* [Aqeel Anwar](https://www.prism.gatech.edu/~manwar8) - Georgia Institute of Technology
+
+## License
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
