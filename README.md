@@ -32,4 +32,4 @@ robustness
 * [Aqeel Anwar](https://www.prism.gatech.edu/~manwar8) - Georgia Institute of Technology
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) file for details
