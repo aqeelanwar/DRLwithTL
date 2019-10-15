@@ -1,2 +1,27 @@
-# DRLwithTL
- 
+# Deep Reinforcement Learning with Transfer Learning - Simulated Drone and Environment (DRLwithTL-Sim)
+
+## What is DRLwithTL-Sim?
+This repository uses Transfer Learning (TL) based approach to reduce on-board computation required to train a deep neural network for autonomous navigation via Deep Reinforcement Learning for a target algorithmic performance. A library of 3D realistic meta-environments is manually designed using Unreal Gaming Engine and the network is trained end-to- end. These trained meta-weights are then used as initializers to the network in a **simulated** test environment and fine-tuned for the last few fully connected layers. Variation in drone dynamics and environmental characteristics is carried out to show robustness of the approach.
+The repository containing the code for **real** environment on a **real** DJI Tello drone can be found @ [DRLwithTL-Real](www.google.com)
+
+## Installing DRLwithTL-Sim
+The current version of DRLwithTL-Sim supports the most commonly used OS such as Windows, Linux and Mac OS and requires python3. It’s advisable to make a new virtual environment for this project and install the dependencies. Following steps can be taken to download get started with DRLwithTL-Sim
+
+### Clone the repository
+```
+git clone https://github.com/aqeelanwar/DRLwithTL.git
+```
+### Install required packages
+The provided requirements.txt file can be used to install all the required packages. Use the following command
+
+### Install Epic Unreal Engine
+
+### Run the simulated environment
+AirSim is used to interface between the Python code and Unreal Engine simulated environments. You can either use Unreal Engine to manually design the environment or you can download one from the link below
+
+* [Indoor Long Environment](www.google.com)
+
+## Citing
+If you find this repository useful for your research please use the following bibtex citation
+
+```
