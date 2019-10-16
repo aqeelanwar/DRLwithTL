@@ -22,7 +22,7 @@ AirSim is used to interface between the Python code and Unreal Engine simulated 
 * [Indoor Long Environment](https://www.google.com)
 
 ## Citing
-If you find this repository useful for your research please use the following bibtex citation
+If you find this repository useful for your research please use the following bibtex citations
 
 ```
 @ARTICLE{2019arXiv191005547A,
@@ -39,6 +39,18 @@ archivePrefix = {arXiv},
  primaryClass = {cs.LG},
        adsurl = {https://ui.adsabs.harvard.edu/abs/2019arXiv191005547A},
       adsnote = {Provided by the SAO/NASA Astrophysics Data System}
+}
+```
+```
+@article{yoon2019hierarchical,
+  title={Hierarchical Memory System With STT-MRAM and SRAM to Support Transfer and Real-Time Reinforcement Learning in Autonomous Drones},
+  author={Yoon, Insik and Anwar, Malik Aqeel and Joshi, Rajiv V and Rakshit, Titash and Raychowdhury, Arijit},
+  journal={IEEE Journal on Emerging and Selected Topics in Circuits and Systems},
+  volume={9},
+  number={3},
+  pages={485--497},
+  year={2019},
+  publisher={IEEE}
 }
 ```
 
