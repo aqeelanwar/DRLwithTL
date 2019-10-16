@@ -5,7 +5,7 @@ This repository uses Transfer Learning (TL) based approach to reduce on-board co
 The repository containing the code for **real** environment on a **real** DJI Tello drone can be found @ [DRLwithTL-Real](www.google.com)
 
 ## Installing DRLwithTL-Sim
-The current version of DRLwithTL-Sim supports the most commonly used OS such as Windows, Linux and Mac OS and requires python3. It’s advisable to make a new virtual environment for this project and install the dependencies. Following steps can be taken to download get started with DRLwithTL-Sim
+The current version of DRLwithTL-Sim supports Windows and requires python3. It’s advisable to [make a new virtual environment](https://towardsdatascience.com/setting-up-python-platform-for-machine-learning-projects-cfd85682c54b) for this project and install the dependencies. Following steps can be taken to download get started with DRLwithTL-Sim
 
 ### Clone the repository
 ```
@@ -13,13 +13,59 @@ git clone https://github.com/aqeelanwar/DRLwithTL.git
 ```
 ### Install required packages
 The provided requirements.txt file can be used to install all the required packages. Use the following command
+```
+cd DRLwithTL
+pip install –r requirements.txt
+```
+This will install the required packages in the activated python environment.
+
 
 ### Install Epic Unreal Engine
+You can follow the guidelines in the link below to install Unreal Engine on your platform
 
-### Run the simulated environment
-AirSim is used to interface between the Python code and Unreal Engine simulated environments. You can either use Unreal Engine to manually design the environment or you can download one from the link below
+[Instructions on installing Unreal engine](https://docs.unrealengine.com/en-US/GettingStarted/Installation/index.html)
+
+### Install AirSim
+AirSim is an open-source plugin for Unreal Engine developed by Microsoft for agents (drones and cars) with physically and visually realistic simulations. In order to interface between Python3 and the simulated environment, AirSim needs to be installed. It can be downloaded from the link below
+
+[Instructions on installing AirSim](https://docs.unrealengine.com/en-US/GettingStarted/Installation/index.html)
+
+
+
+## Running DRLwithTL-Sim
+Once you have the required packages and software downloaded and running, you can take the following steps to run the code
+
+### Create/Download a simulated environment
+You can either manually create your environment using Unreal Engine, or can download one of the sample environments from the link below and run it.
 
 * [Indoor Long Environment](https://www.google.com)
+
+The link above will download the packaged version of the _Indoor Long environment_. Run the indoor_long.exe file to run the environment.
+
+### Edit the configuration file (Optional)
+The RL parameters for the DRL simulation can be set using the provided config file and are self-explanatory.
+
+```
+cd DRLwithTL\configs
+notepad config.cfg (#for windows)
+```
+
+### Run the Python code
+The DRL code can be started using the following command
+
+```
+cd DRLwithTL
+python main.py
+```
+
+While the simulation is running, RL parameters such as epsilon, learning rate, average Q values and loss can be viewed on the tensorboard. The path depends on the env_type, env_name and train_type set in the config file and is given by 'models/trained/&lt;env_type>/&lt;env_name>/Imagenet/''. An example can be seen below
+
+```
+cd models\trained\Indoor\indoor_long\Imagenet\
+tensorboard --logdir e2e
+
+```
+
 
 ## Citing
 If you find this repository useful for your research please use the following bibtex citations
