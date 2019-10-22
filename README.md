@@ -34,7 +34,7 @@ You can follow the guidelines in the link below to install Unreal Engine on your
 ### Install AirSim
 AirSim is an open-source plugin for Unreal Engine developed by Microsoft for agents (drones and cars) with physically and visually realistic simulations. In order to interface between Python3 and the simulated environment, AirSim needs to be installed. It can be downloaded from the link below
 
-[Instructions on installing AirSim](https://docs.unrealengine.com/en-US/GettingStarted/Installation/index.html)
+[Instructions on installing AirSim](https://github.com/microsoft/airsim)
 
 
 
