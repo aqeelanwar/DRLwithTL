@@ -17,6 +17,17 @@ The current version of DRLwithTL-Sim supports Windows and requires python3. Itâ€
 ```
 git clone https://github.com/aqeelanwar/DRLwithTL.git
 ```
+
+### Download imagenet weights for AlexNet
+The DQN uses Imagenet learned weights for AlexNet to initialize the layers. Following link can be used to download the imagenet.npy file.
+
+[Download imagenet.npy](https://drive.google.com/open?id=1Ei4mCzjfLY5ql6ILIUHaCtAR2XF6BtAM)
+
+Once downloaded, place it in
+```
+models/imagenet.npy
+```
+
 ### Install required packages
 The provided requirements.txt file can be used to install all the required packages. Use the following command
 ```
