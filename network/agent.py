@@ -167,7 +167,7 @@ class DeepAgent():
         responses = self.client.simGetImages([airsim.ImageRequest(2, airsim.ImageType.DepthVis, False, False)])
         depth = []
         img1d = np.fromstring(responses[0].image_data_uint8, dtype=np.uint8)
-        depth = img1d.reshape(responses[0].height, responses[0].width, 4)[:, :, 0]
+        depth = img1d.reshape(responses[0].height, responses[0].width, 3)[:, :, 0]
 
         # To make sure the wall leaks in the unreal environment doesn't mess up with the reward function
         thresh = 50
@@ -186,7 +186,7 @@ class DeepAgent():
 
         response = responses1[0]
         img1d = np.fromstring(response.image_data_uint8, dtype=np.uint8)  # get numpy array
-        img_rgba = img1d.reshape(response.height, response.width, 4)
+        img_rgba = img1d.reshape(response.height, response.width, 3)
         img = Image.fromarray(img_rgba)
         img_rgb = img.convert('RGB')
         self.iter = self.iter+1
