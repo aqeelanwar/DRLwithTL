@@ -202,6 +202,88 @@ class DeepAgent():
         return state_rgb
 
     def avg_depth(self, depth_map1, thresh):
+        # Version 0.3 - NAN issue resolved
+        # Thresholded depth map to ignore objects too far and give them a constant value
+        # Globally (not locally as in the version 0.1) Normalise the thresholded map between 0 and 1
+        # Threshold depends on the environment nature (indoor/ outdoor)
+        depth_map = depth_map1
+        # L1=0
+        # R1=0
+        # C1=0
+        # print(global_depth)
+        # dynamic_window = False
+        plot_depth = True
+        global_depth = np.mean(depth_map)
+        n = max(global_depth * thresh / 3, 1)
+        # print("n=", n)
+        # n = 3
+        H = np.size(depth_map, 0)
+        W = np.size(depth_map, 1)
+        grid_size = (np.array([H, W]) / n)
+
+        # scale by 0.9 to select the window towards top from the mid line
+        h = max(int(0.9 * H * (n - 1) / (2 * n)), 0)
+        w = max(int(W * (n - 1) / (2 * n)), 0)
+        grid_location = [h, w]
+
+        x_start = int(round(grid_location[0]))
+        y_start_center = int(round(grid_location[1]))
+        x_end = int(round(grid_location[0] + grid_size[0]))
+        y_start_right = min(int(round(grid_location[1] + grid_size[1])), W)
+        y_start_left = max(int(round(grid_location[1] - grid_size[1])), 0)
+        y_end_right = min(int(round(grid_location[1] + 2 * grid_size[1])), W)
+
+        fract_min = 0.05
+
+        L_map = depth_map[x_start:x_end, y_start_left:y_start_center]
+        C_map = depth_map[x_start:x_end, y_start_center:y_start_right]
+        R_map = depth_map[x_start:x_end, y_start_right:y_end_right]
+
+        if not L_map.any():
+            L1 = 0
+        else:
+            L_sort = np.sort(L_map.flatten())
+            end_ind = int(np.round(fract_min * len(L_sort)))
+            L1 = np.mean(L_sort[0:end_ind])
+
+        if not R_map.any():
+            R1 = 0
+        else:
+            R_sort = np.sort(R_map.flatten())
+            end_ind = int(np.round(fract_min * len(R_sort)))
+            R1 = np.mean(R_sort[0:end_ind])
+
+        if not C_map.any():
+            C1 = 0
+        else:
+            C_sort = np.sort(C_map.flatten())
+            end_ind = int(np.round(fract_min * len(C_sort)))
+            C1 = np.mean(C_sort[0:end_ind])
+
+        if plot_depth:
+            cv2.rectangle(depth_map1, (y_start_center, x_start), (y_start_right, x_end), (0, 0, 0), 3)
+            cv2.rectangle(depth_map1, (y_start_left, x_start), (y_start_center, x_end), (0, 0, 0), 3)
+            cv2.rectangle(depth_map1, (y_start_right, x_start), (y_end_right, x_end), (0, 0, 0), 3)
+
+            dispL = str(np.round(L1, 3))
+            dispC = str(np.round(C1, 3))
+            dispR = str(np.round(R1, 3))
+            cv2.putText(depth_map1, dispL, (20, 70), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 0), thickness=2)
+            cv2.putText(depth_map1, dispC, (int(W / 2 - 40), 70), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 0), thickness=2)
+            cv2.putText(depth_map1, dispR, (int(W - 80), 70), cv2.FONT_HERSHEY_COMPLEX, 1, (0, 0, 0), thickness=2)
+            cmap = plt.get_cmap('jet')
+            #
+            depth_map_heat = cmap(depth_map1)
+            cv2.imshow('Depth Map', depth_map_heat)
+            cv2.waitKey(1)
+
+        # print(L1, C1, R1)
+        return L1, C1, R1
+
+
+
+
+    def avg_depth_old(self, depth_map1, thresh):
         # Version 0.2
         # Thresholded depth map to ignore objects too far and give them a constant value
         # Globally (not locally as in the version 0.1) Normalise the thresholded map between 0 and 1

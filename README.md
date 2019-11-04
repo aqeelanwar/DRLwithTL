@@ -56,6 +56,9 @@ Once you have the required packages and software downloaded and running, you can
 You can either manually create your environment using Unreal Engine, or can download one of the sample environments from the link below and run it.
 
 * [Indoor Long Environment](https://drive.google.com/open?id=1UhUSgnEPTgSiE5CoXSt8eeI_T5YUXhmS)
+* [Indoor Condo Environment](https://drive.google.com/open?id=1poS6eM3bJDAMXF21UBvlb9TxtzCpGg-R)
+
+
 
 The link above will download the packaged version of the _Indoor Long environment_. Run the indoor_long.exe file to run the environment.
 
