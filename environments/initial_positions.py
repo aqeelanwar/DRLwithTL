@@ -65,12 +65,18 @@ def indoor_meta():
 # Test condo indoor initial positions
 
 def indoor_condo():
-    orig_ip =   [
-                  [-290, -1700, 0], # Player start
-                   [580, 1200, 180],
-                   [-240, -500, 90]
-                ]
-    level_name = ['Condo1', 'Condo2', 'Condo3']
+    # orig_ip =   [
+    #               [-290, -1700, 0], # Player start
+    #                [580, 1200, 180],
+    #                [-240, -500, 90]
+    #             ]
+    orig_ip = [
+        [3308, 610, 0],  # Player start
+        [2228, 380, 270],
+        [1618, -990, 30],
+        [618, 610, 0]
+    ]
+    level_name = ['Condo1', 'Condo2', 'Condo3', 'Condo4']
     crash_threshold = 0.07
     initZ = -2
     return orig_ip, level_name, crash_threshold, initZ
