@@ -63,7 +63,7 @@ You can either manually create your environment using Unreal Engine, or can down
 The link above will download the packaged version of the _Indoor Long environment_. Run the indoor_long.exe file to run the environment.
 
 ### Edit the configuration file (Optional)
-The RL parameters for the DRL simulation can be set using the provided config file and are self-explanatory.
+The RL parameters for the DRL simulation can be set using the provided config file and are self-explanatory. The details on the parameters in the config file can be found [here](https://towardsdatascience.com/deep-reinforcement-learning-for-drones-in-3d-realistic-environments-36821b6ee077)
 
 ```
 cd DRLwithTL\configs
