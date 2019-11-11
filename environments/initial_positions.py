@@ -80,7 +80,7 @@ def indoor_condo():
 
 def indoor_techno():
     # The environment can be downloaded from
-    # https://drive.google.com/open?id=1JrlYT67NaAuHrWRAFeG6UFVE6YJvK4g7
+    # https://drive.google.com/open?id=19JBc511LWeiAzmtQHQvHFIkj6HHn7Chi
     orig_ip = [
         [4289, -7685, 0],  #Player Start
         [3750, -1750, -120],
@@ -94,7 +94,7 @@ def indoor_techno():
 
 def indoor_vanleer():
     # The environment can be downloaded from
-    # https://drive.google.com/open?id=1It12dqG7OPa1zjH2q7jbhWaGvzXxJRVN
+    # https://drive.google.com/open?id=1Uav1EiVVYuMUpN72x6n_CSR36pNCBMLQ
     orig_ip = [
         [-3080, -4280, 90],  #Player Start
         [-1340, -2240, -90],
