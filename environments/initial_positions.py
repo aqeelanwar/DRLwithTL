@@ -65,11 +65,8 @@ def indoor_meta():
 # Test condo indoor initial positions
 
 def indoor_condo():
-    # orig_ip =   [
-    #               [-290, -1700, 0], # Player start
-    #                [580, 1200, 180],
-    #                [-240, -500, 90]
-    #             ]
+    # The environment can be downloaded from
+    # https://drive.google.com/open?id=1poS6eM3bJDAMXF21UBvlb9TxtzCpGg-R
     orig_ip = [
         [3308, 610, 0],  # Player start
         [2228, 380, 270],
@@ -82,17 +79,36 @@ def indoor_condo():
     return orig_ip, level_name, crash_threshold, initZ
 
 def indoor_techno():
+    # The environment can be downloaded from
+    # https://drive.google.com/open?id=1JrlYT67NaAuHrWRAFeG6UFVE6YJvK4g7
     orig_ip = [
-        [19081, -8867, 0],
-        [17348, -3864, -120],
-        [20895, -4757, 30]
+        [4289, -7685, 0],  #Player Start
+        [3750, -1750, -120],
+        [3580, -4770, -70],
+        [6220, -2150, -40]
     ]
-    level_name = ['Techno1', 'Techno2', 'Techno3']
+    level_name = ['Techno1', 'Techno2', 'Techno3', 'Techno4']
+    crash_threshold = 0.07
+    initZ = -2
+    return orig_ip, level_name, crash_threshold, initZ
+
+def indoor_vanleer():
+    # The environment can be downloaded from
+    # https://drive.google.com/open?id=1It12dqG7OPa1zjH2q7jbhWaGvzXxJRVN
+    orig_ip = [
+        [-3080, -4280, 90],  #Player Start
+        [-1340, -2240, -90],
+        [-3790, -5450, 180],
+        [-3980, -1760, -90]
+    ]
+    level_name = ['VanLeer1', 'VanLeer2', 'VanLeer3', 'VanLeer4']
     crash_threshold = 0.07
     initZ = -2
     return orig_ip, level_name, crash_threshold, initZ
 
 def indoor_long():
+    # The environment can be downloaded from
+    # https://drive.google.com/open?id=1UhUSgnEPTgSiE5CoXSt8eeI_T5YUXhmS
     orig_ip = [
         [-649, -4287, 180],  # Player Start
         [-4224, -2601, 180],

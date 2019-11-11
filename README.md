@@ -57,7 +57,8 @@ You can either manually create your environment using Unreal Engine, or can down
 
 * [Indoor Long Environment](https://drive.google.com/open?id=1UhUSgnEPTgSiE5CoXSt8eeI_T5YUXhmS)
 * [Indoor Condo Environment](https://drive.google.com/open?id=1poS6eM3bJDAMXF21UBvlb9TxtzCpGg-R)
-
+* [Indoor VanLeer Environment](https://drive.google.com/open?id=1It12dqG7OPa1zjH2q7jbhWaGvzXxJRVN)
+* [Indoor Techno Environment](https://drive.google.com/open?id=1JrlYT67NaAuHrWRAFeG6UFVE6YJvK4g7)
 
 
 The link above will download the packaged version of the _Indoor Long environment_. Run the indoor_long.exe file to run the environment.
