@@ -59,9 +59,11 @@ You can either manually create your environment using Unreal Engine, or can down
 * [Indoor Condo Environment](https://drive.google.com/open?id=1poS6eM3bJDAMXF21UBvlb9TxtzCpGg-R)
 * [Indoor VanLeer Environment](https://drive.google.com/open?id=1Uav1EiVVYuMUpN72x6n_CSR36pNCBMLQ)
 * [Indoor Techno Environment](https://drive.google.com/open?id=19JBc511LWeiAzmtQHQvHFIkj6HHn7Chi)
+* [Indoor Pyramid Environment](https://drive.google.com/open?id=1Jy12ZljpzTyLZ4TjVZAvCaQkfoWorp9I)
+* [Indoor FrogEyes Environment](https://drive.google.com/open?id=1RWFfPAEXprOsDteM1dTcNWEOToRHn7Pv)
 
 
-The link above will download the packaged version of the _Indoor Long environment_. Run the indoor_long.exe file to run the environment.
+The link above will download the packaged version of the environment for 64-bit windows. Run the executable file (.exe) to start the environment.
 
 ### Edit the configuration file (Optional)
 The RL parameters for the DRL simulation can be set using the provided config file and are self-explanatory. The details on the parameters in the config file can be found [here](https://towardsdatascience.com/deep-reinforcement-learning-for-drones-in-3d-realistic-environments-36821b6ee077)

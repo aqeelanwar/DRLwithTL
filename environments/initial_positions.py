@@ -122,6 +122,35 @@ def indoor_long():
     initZ = -1
     return orig_ip, level_name, crash_threshold, initZ
 
+def indoor_pyramid():
+    # The environment can be downloaded from
+    # https://drive.google.com/open?id=1Jy12ZljpzTyLZ4TjVZAvCaQkfoWorp9I
+    orig_ip = [
+        [-1450, -520, 90],  # Player Start
+        [-940, 240, 130],
+        [860, -880, 160],
+        [-750, -860, 0]
+    ]
+    level_name = ['Pyramid1', 'Pyramid2', 'Pyramid3', 'Pyramid4']
+    crash_threshold = 0.07
+    initZ = -1
+    return orig_ip, level_name, crash_threshold, initZ
+
+
+def indoor_frogeyes():
+    # The environment can be downloaded from
+    # https://drive.google.com/open?id=1RWFfPAEXprOsDteM1dTcNWEOToRHn7Pv
+    orig_ip = [
+        [120, -350, 0],  # Player Start
+        [1030, 850, 150],
+        [-1480, -850, 0],
+        [2000, -400, -110]
+    ]
+    level_name = ['Pyramid1', 'Pyramid2', 'Pyramid3', 'Pyramid4']
+    crash_threshold = 0.07
+    initZ = -1
+    return orig_ip, level_name, crash_threshold, initZ
+
 # Four - Long
 
 # Seven - Techno
