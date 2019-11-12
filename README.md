@@ -55,15 +55,19 @@ Once you have the required packages and software downloaded and running, you can
 ### Create/Download a simulated environment
 You can either manually create your environment using Unreal Engine, or can download one of the sample environments from the link below and run it.
 
-* [Indoor Long Environment](https://drive.google.com/open?id=1UhUSgnEPTgSiE5CoXSt8eeI_T5YUXhmS)
-* [Indoor Condo Environment](https://drive.google.com/open?id=1poS6eM3bJDAMXF21UBvlb9TxtzCpGg-R)
-* [Indoor VanLeer Environment](https://drive.google.com/open?id=1Uav1EiVVYuMUpN72x6n_CSR36pNCBMLQ)
-* [Indoor Techno Environment](https://drive.google.com/open?id=19JBc511LWeiAzmtQHQvHFIkj6HHn7Chi)
-* [Indoor Pyramid Environment](https://drive.google.com/open?id=1Jy12ZljpzTyLZ4TjVZAvCaQkfoWorp9I)
-* [Indoor FrogEyes Environment](https://drive.google.com/open?id=1RWFfPAEXprOsDteM1dTcNWEOToRHn7Pv)
+[Download Environments](https://drive.google.com/open?id=1u5teth6l4JW2IXAkZAg1CbDGR6zE-v6Z)
+
+Following environments are available for download from the link above
+
+* Indoor Long Environment
+* Indoor Condo Environment
+* Indoor VanLeer Environment
+* Indoor Techno Environment
+* Indoor Pyramid Environment
+* Indoor FrogEyes Environment
 
 
-The link above will download the packaged version of the environment for 64-bit windows. Run the executable file (.exe) to start the environment.
+The link above will help you download the packaged version of the environment for 64-bit windows. Run the executable file (.exe) to start the environment.
 
 ### Edit the configuration file (Optional)
 The RL parameters for the DRL simulation can be set using the provided config file and are self-explanatory. The details on the parameters in the config file can be found [here](https://towardsdatascience.com/deep-reinforcement-learning-for-drones-in-3d-realistic-environments-36821b6ee077)

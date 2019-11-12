@@ -151,6 +151,21 @@ def indoor_frogeyes():
     initZ = -1
     return orig_ip, level_name, crash_threshold, initZ
 
+
+def indoor_twist():
+    # The environment can be downloaded from
+    #
+    orig_ip = [
+        [-1990, 1070, 90],  # Player Start
+        [-1440, 320, 0],
+        [1460, -1440, 0],
+        [1970, 360, 180]
+    ]
+    level_name = ['Twist1', 'Twist2', 'Twist3', 'Twist4']
+    crash_threshold = 0.07
+    initZ = -1
+    return orig_ip, level_name, crash_threshold, initZ
+
 # Four - Long
 
 # Seven - Techno

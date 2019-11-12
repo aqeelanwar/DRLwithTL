@@ -121,6 +121,7 @@ def policy(epsilon,curr_state, iter, b, epsilon_model, wait_before_train, num_ac
 
 def reset_to_initial(level, reset_array, client):
     reset_pos = reset_array[level]
+
     client.simSetVehiclePose(reset_pos, ignore_collison=True)
     time.sleep(0.1)
 
