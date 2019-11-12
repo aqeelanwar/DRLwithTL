@@ -60,7 +60,7 @@ You can either manually create your environment using Unreal Engine, or can down
 Following environments are available for download from the link above
 
 * Indoor Long Environment
-* Indoor Condo Environment
+* Indoor Twist Environment
 * Indoor VanLeer Environment
 * Indoor Techno Environment
 * Indoor Pyramid Environment
