@@ -99,7 +99,7 @@ If you find this repository useful for your research please use the following bi
 
 ```
 @ARTICLE{2019arXiv191005547A,
-       author = {{Anwar}, Aqeel and {Raychowdhury}, Arijit},
+       author = {Anwar, Aqeel and Raychowdhury, Arijit},
         title = "{Autonomous Navigation via Deep Reinforcement Learning for Resource Constraint Edge Nodes using Transfer Learning}",
       journal = {arXiv e-prints},
      keywords = {Computer Science - Machine Learning, Statistics - Machine Learning},
