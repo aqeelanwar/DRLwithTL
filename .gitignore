@@ -3,3 +3,6 @@
 *.xml
 .idea/
 models/
+unreal_envs/
+scratch.py
+

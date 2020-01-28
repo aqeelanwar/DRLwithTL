@@ -9,7 +9,7 @@ class AlexNetDuel(object):
         self.x = x
         weights_path = 'models/imagenet.npy'
         weights = np.load(open(weights_path, "rb"), encoding="latin1").item()
-        print('Loading imagenet weights for the conv layers and random for fc layers')
+        # print('Loading imagenet weights for the conv layers and random for fc layers')
         train_conv = True
         train_fc6 = True
         train_fc7 = True
@@ -88,7 +88,7 @@ class AlexNetConditional(object):
         self.x = x
         weights_path = 'models/imagenet.npy'
         weights = np.load(open(weights_path, "rb"), encoding="latin1").item()
-        print('Loading imagenet weights for the conv layers and random for fc layers')
+        # print('Loading imagenet weights for the conv layers and random for fc layers')
         train_conv = True
         train_fc6 = True
         train_fc7 = True
@@ -268,7 +268,7 @@ class AlexNet(object):
         self.x = x
         weights_path = 'models/imagenet.npy'
         weights = np.load(open(weights_path, "rb"), encoding="latin1").item()
-        print('Loading imagenet weights for the conv layers and random for fc layers')
+        # print('Loading imagenet weights for the conv layers and random for fc layers')
         train_conv = True
         train_fc6 = True
         train_fc7 = True

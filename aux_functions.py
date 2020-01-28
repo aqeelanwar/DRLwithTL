@@ -2,12 +2,38 @@
 # Created: 10/14/2019, 12:50 PM
 # Email: aqeel.anwar@gatech.edu
 import numpy as np
+import os, subprocess
 import math
 import random
 import time
 import airsim
 import pygame
 from configs.read_cfg import read_cfg
+
+def save_network_path(cfg):
+    # Save the network to the directory network_path
+    weights_type = 'Imagenet'
+    if cfg.custom_load == True:
+        cfg.network_path = 'models/trained/' + cfg.env_type + '/' + cfg.env_name + '/' + 'CustomLoad/' + cfg.train_type + '/' + cfg.train_type
+    else:
+        cfg.network_path = 'models/trained/' + '/' + cfg.env_type + '/' + cfg.env_name + '/' + weights_type + '/' + cfg.train_type + '/' + cfg.train_type
+
+    if not os.path.exists(cfg.network_path):
+        os.makedirs(cfg.network_path)
+
+    return cfg
+
+
+def start_environment(env_name):
+    path = os.path.dirname(os.path.abspath(__file__)) + "/unreal_envs/" + env_name + "/" + env_name + ".exe"
+    # print(path)
+    env_process = subprocess.Popen(path)
+    time.sleep(6)
+    print("Successfully loaded environment: " + env_name)
+
+    return env_process
+
+
 
 def translate_action(action, num_actions):
     action_word = ['Forward', 'Right', 'Left', 'Sharp Right', 'Sharp Left']
@@ -97,6 +123,7 @@ def minibatch_double(data_tuple, batch_size, choose, ReplayMemory, input_size, a
 
 def policy(epsilon,curr_state, iter, b, epsilon_model, wait_before_train, num_actions, agent):
     qvals=[]
+
     epsilon_ceil=0.95
     if epsilon_model=='linear':
         epsilon = epsilon_ceil* (iter-wait_before_train) / (b-wait_before_train)
@@ -126,9 +153,9 @@ def reset_to_initial(level, reset_array, client):
     time.sleep(0.1)
 
 
-def connect_drone():
+def connect_drone(ip_address='127.0.0.0'):
     print('------------------------------ Drone ------------------------------')
-    client = airsim.MultirotorClient(timeout_value=10)
+    client = airsim.MultirotorClient(ip=ip_address, timeout_value=10)
     client.confirmConnection()
     old_posit = client.simGetVehiclePose()
     client.simSetVehiclePose(
@@ -154,7 +181,7 @@ def blit_text(surface, text, pos, font, color=pygame.Color('black')):
         x = pos[0]  # Reset the x.
         y += word_height  # Start on new row.
 
-def pygame_connect(H, W):
+def pygame_connect(H=925, W=380):
     pygame.init()
     screen_width = H
     screen_height = W

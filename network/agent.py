@@ -12,24 +12,24 @@ from network.loss_functions import *
 from numpy import linalg as LA
 
 class DeepAgent():
-    def __init__(self, input_size, num_actions, client, env_type, train_fc, network_path, name):
+    def __init__(self, cfg, client, name):
         print('------------------------------ ' +str(name)+ ' ------------------------------')
         self.g = tf.Graph()
         self.iter=0
         with self.g.as_default():
 
-            self.stat_writer = tf.summary.FileWriter(network_path+'return_plot')
+            self.stat_writer = tf.summary.FileWriter(cfg.network_path+'return_plot')
             # name_array = 'D:/train/loss'+'/'+name
-            self.loss_writer = tf.summary.FileWriter(network_path+'loss/'+name)
-            self.env_type=env_type
+            self.loss_writer = tf.summary.FileWriter(cfg.network_path+'loss/'+name)
+            self.env_type=cfg.env_type
             self.client=client
-            self.input_size = input_size
-            self.num_actions = num_actions
+            self.input_size = cfg.input_size
+            self.num_actions = cfg.num_actions
 
             #Placeholders
             self.batch_size = tf.placeholder(tf.int32, shape=())
             self.learning_rate = tf.placeholder(tf.float32, shape=())
-            self.X1 = tf.placeholder(tf.float32, [None, input_size, input_size, 3], name='States')
+            self.X1 = tf.placeholder(tf.float32, [None, cfg.input_size, cfg.input_size, 3], name='States')
 
             #self.X = tf.image.resize_images(self.X1, (227, 227))
 
@@ -38,12 +38,10 @@ class DeepAgent():
             self.target = tf.placeholder(tf.float32,    shape = [None], name='Qvals')
             self.actions= tf.placeholder(tf.int32,      shape = [None], name='Actions')
 
-            initial_weights ='imagenet'
-            initial_weights = 'models/weights/weights.npy'
-            self.model = AlexNetDuel(self.X, num_actions, train_fc)
+            self.model = AlexNetDuel(self.X, cfg.num_actions, cfg.train_fc)
 
             self.predict = self.model.output
-            ind = tf.one_hot(self.actions, num_actions)
+            ind = tf.one_hot(self.actions, cfg.num_actions)
             pred_Q = tf.reduce_sum(tf.multiply(self.model.output, ind), axis=1)
             self.loss = huber_loss(pred_Q, self.target)
             self.train = tf.train.AdamOptimizer(learning_rate=self.learning_rate, beta1=0.9, beta2=0.99).minimize(self.loss, name="train")
@@ -55,7 +53,13 @@ class DeepAgent():
 
             self.sess.graph.finalize()
 
-        print()
+        # Load custom weights from custom_load_path if required
+        if cfg.custom_load:
+            print('Loading weights from: ', cfg.custom_load_path)
+            self.load_network(cfg.custom_load_path)
+
+
+        # print()
 
     def Q_val(self, xs):
         target = np.zeros(shape=[xs.shape[0]], dtype=np.float32)
@@ -400,7 +404,7 @@ class DeepAgent():
         return self.client.simGetCollisionInfo()
 
     def return_plot(self, ret, epi, env_type, mem_percent, iter, dist):
-        # ret, epi1, int(level/4), mem_percent, iter
+        # ret, episode, int(level/4), mem_percent, iter
         summary = tf.Summary()
         tag = 'Return'
         summary.value.add(tag=tag, simple_value=ret)

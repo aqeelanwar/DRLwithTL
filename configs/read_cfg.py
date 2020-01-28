@@ -27,8 +27,10 @@ def read_cfg(config_filename = 'configs/main.cfg', verbose = False):
     else:
         cfg.load_data = False
     cfg.load_data_path = str(config.get('simulation_params', 'load_data_path'))
+    cfg.ip_address = str(config.get('simulation_params', 'ip_address'))
 
     # [RL Parameters]
+    cfg.input_size = int(config.get('RL_params', 'input_size').split(',')[0])
     cfg.num_actions = int(config.get('RL_params', 'num_actions').split(',')[0])
     cfg.train_type = config.get('RL_params', 'train_type')
     cfg.wait_before_train = int(config.get('RL_params', 'wait_before_train').split(',')[0])

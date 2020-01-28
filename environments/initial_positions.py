@@ -1,6 +1,10 @@
 import numpy as np
 import airsim
 
+# Define the initial positions of teh environments being used.
+# The module name is the name of the environment to be used in the config file
+# and should be same as the .exe file (and folder) within the unreal_envs folder
+
 def indoor_meta():
 
     orig_ip = [     #x, y, theta in DEGREES
@@ -62,11 +66,26 @@ def indoor_meta():
     initZ = -1
     return orig_ip, level_name, crash_threshold, initZ
 
-# Test condo indoor initial positions
 
+# Train complex indoor initial positions
+def indoor_complex():
+    # The environment can be downloaded from
+    # https://drive.google.com/drive/u/2/folders/1u5teth6l4JW2IXAkZAg1CbDGR6zE-v6Z
+    orig_ip = [
+        [-195, 812, 0],  # Player start
+        [-1018, 216, -50],
+        [-77, -118, 180],
+        [800, -553, 190]
+    ]
+    level_name = ['Complex1', 'Complex2', 'Complex3', 'Complex4']
+    crash_threshold = 0.07
+    initZ = -2
+    return orig_ip, level_name, crash_threshold, initZ
+
+# Test condo indoor initial positions
 def indoor_condo():
     # The environment can be downloaded from
-    # https://drive.google.com/open?id=1poS6eM3bJDAMXF21UBvlb9TxtzCpGg-R
+    # https://drive.google.com/drive/u/2/folders/1u5teth6l4JW2IXAkZAg1CbDGR6zE-v6Z
     orig_ip = [
         [3308, 610, 0],  # Player start
         [2228, 380, 270],
@@ -80,7 +99,7 @@ def indoor_condo():
 
 def indoor_techno():
     # The environment can be downloaded from
-    # https://drive.google.com/open?id=19JBc511LWeiAzmtQHQvHFIkj6HHn7Chi
+    # https://drive.google.com/drive/u/2/folders/1u5teth6l4JW2IXAkZAg1CbDGR6zE-v6Z
     orig_ip = [
         [4289, -7685, 0],  #Player Start
         [3750, -1750, -120],
@@ -94,7 +113,7 @@ def indoor_techno():
 
 def indoor_vanleer():
     # The environment can be downloaded from
-    # https://drive.google.com/open?id=1Uav1EiVVYuMUpN72x6n_CSR36pNCBMLQ
+    # https://drive.google.com/drive/u/2/folders/1u5teth6l4JW2IXAkZAg1CbDGR6zE-v6Z
     orig_ip = [
         [-3080, -4280, 90],  #Player Start
         [-1340, -2240, -90],
@@ -103,12 +122,12 @@ def indoor_vanleer():
     ]
     level_name = ['VanLeer1', 'VanLeer2', 'VanLeer3', 'VanLeer4']
     crash_threshold = 0.07
-    initZ = -2
+    initZ = -1
     return orig_ip, level_name, crash_threshold, initZ
 
 def indoor_long():
     # The environment can be downloaded from
-    # https://drive.google.com/open?id=1UhUSgnEPTgSiE5CoXSt8eeI_T5YUXhmS
+    # https://drive.google.com/drive/u/2/folders/1u5teth6l4JW2IXAkZAg1CbDGR6zE-v6Z
     orig_ip = [
         [-649, -4287, 180],  # Player Start
         [-4224, -2601, 180],
@@ -124,7 +143,7 @@ def indoor_long():
 
 def indoor_pyramid():
     # The environment can be downloaded from
-    # https://drive.google.com/open?id=1Jy12ZljpzTyLZ4TjVZAvCaQkfoWorp9I
+    #https://drive.google.com/drive/u/2/folders/1u5teth6l4JW2IXAkZAg1CbDGR6zE-v6Z
     orig_ip = [
         [-1450, -520, 90],  # Player Start
         [-940, 240, 130],
@@ -139,7 +158,7 @@ def indoor_pyramid():
 
 def indoor_frogeyes():
     # The environment can be downloaded from
-    # https://drive.google.com/open?id=1RWFfPAEXprOsDteM1dTcNWEOToRHn7Pv
+    # https://drive.google.com/drive/u/2/folders/1u5teth6l4JW2IXAkZAg1CbDGR6zE-v6Z
     orig_ip = [
         [120, -350, 0],  # Player Start
         [1030, 850, 150],
@@ -154,7 +173,7 @@ def indoor_frogeyes():
 
 def indoor_twist():
     # The environment can be downloaded from
-    #
+    # https://drive.google.com/drive/u/2/folders/1u5teth6l4JW2IXAkZAg1CbDGR6zE-v6Z
     orig_ip = [
         [-1990, 1070, 90],  # Player Start
         [-1440, 320, 0],
@@ -166,24 +185,6 @@ def indoor_twist():
     initZ = -1
     return orig_ip, level_name, crash_threshold, initZ
 
-# Four - Long
-
-# Seven - Techno
-
-
-
-
-
-def indoor_twisty():
-    orig_ip =   [
-                  [127, -770, 90], # Player start
-                   [2209, -115, 180],
-                   [1680, 1590, -145]
-                ]
-    level_name = ['Twisty1', 'Twisty2', 'Twisty3']
-    crash_threshold = 0.07
-    initZ = -2
-    return orig_ip, level_name, crash_threshold, initZ
 
 def indoor_pretzel():
     orig_ip =   [
