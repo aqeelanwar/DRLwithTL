@@ -67,7 +67,7 @@ Following environments are available for download from the link above
 * Indoor FrogEyes Environment
 
 
-The link above will help you download the packaged version of the environment for 64-bit windows. Run the executable file (.exe) to start the environment.
+The link above will help you download the packaged version of the environment for 64-bit windows. Save the folder in the unreal_env folder.
 
 ### Edit the configuration file (Optional)
 The RL parameters for the DRL simulation can be set using the provided config file and are self-explanatory. The details on the parameters in the config file can be found [here](https://towardsdatascience.com/deep-reinforcement-learning-for-drones-in-3d-realistic-environments-36821b6ee077)
