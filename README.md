@@ -11,7 +11,7 @@ The repository containing the code for **real** environment on a **real** DJI Te
 
 
 ## Introductory Video
-[![Watch the video](https://youtu.be/zmR0KB_qle8)](https://youtu.be/zmR0KB_qle8)
+[![Watch the video](/images/video_cover.png)](https://youtu.be/zmR0KB_qle8)
 
 ## Installing DRLwithTL-Sim
 The current version of DRLwithTL-Sim supports Windows and requires python3. It’s advisable to [make a new virtual environment](https://towardsdatascience.com/setting-up-python-platform-for-machine-learning-projects-cfd85682c54b) for this project and install the dependencies. Following steps can be taken to download get started with DRLwithTL-Sim
