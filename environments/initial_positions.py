@@ -83,7 +83,7 @@ def indoor_complex():
     return orig_ip, level_name, crash_threshold, initZ
 
 # Test condo indoor initial positions
-def indoor_condo():
+def indoor_cloud():
     # The environment can be downloaded from
     # https://drive.google.com/drive/u/2/folders/1u5teth6l4JW2IXAkZAg1CbDGR6zE-v6Z
     orig_ip = [
