@@ -72,7 +72,13 @@ Following environments are available for download from the link above
 * Indoor Complex Environment
 
 
-The link above will help you download the packaged version of the environment for 64-bit windows. Save the folder in the unreal_env folder.
+The link above will help you download the packaged version of the environment for 64-bit windows. Save the folder in the unreal_env folder (create the unreal_env folder if it doesn't exist).
+
+```
+DRLwithTL/unreal_env/<downloaded-environment-folder>    # Generic
+DRLwithTL/unreal_env/indoor_cloud                       # Example
+```
+
 
 ## Edit the configuration file (Optional)
 The RL parameters for the DRL simulation can be set using the provided config file and are self-explanatory. The details on the parameters in the config file can be found [here](https://towardsdatascience.com/deep-reinforcement-learning-for-drones-in-3d-realistic-environments-36821b6ee077)
@@ -192,6 +198,15 @@ custom_load_path: <path_to_weights>
 #### Output graphs
 The simulation updates two graphs in real-time. The first graph is the altitude variation of the drone, while the other one is the drone trajectory mapped onto the environment floorplan. The trajectory graph also reports the total distance traveled by the drone before crash.
 
+#### Run-time controls using PyGame screen
+Right now the simulation supports only the following two functionalities (other functionalities can be added by modifying the check_user_input module in the aux_function.py file for the phase infer)
+
+* Backspace key: Pause/Unpause the simulation
+* S key: Save the altitude variation and trajectory graphs at the following location
+
+```
+unreal_env/<env_name>/results/
+```
 
 ## Citing
 If you find this repository useful for your research please use the following bibtex citations
