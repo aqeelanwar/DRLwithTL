@@ -83,9 +83,9 @@ notepad config.cfg (#for windows)
 ```
 
 ### General Parameters [general_params]:
+
 | Parameter        	| Explanation                                                                       	| Possible values                  	|
 |------------------	|-----------------------------------------------------------------------------------	|----------------------------------	|
-
 | run_name         	| Name for the current                                                              	| Any value                        	|
 | custom_load      	| Dictates if user wants to load the network with custom weights                    	| True/False                       	|
 | custom_load_path 	| If custom_load is set to True, this dictates the path of the weights to be loaded 	| Relative path to weights         	|
