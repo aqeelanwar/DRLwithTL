@@ -94,6 +94,7 @@ notepad config.cfg (#for windows)
 | phase            	| Dictates what mode do you want to run the simulation in                           	| train / infer                    	|
 
 ### Simulation Parameters [simulation_params]:
+
 | Parameter      	| Explanation                                           	| Possible values           	|
 |----------------	|-------------------------------------------------------	|---------------------------	|
 | ip_address     	| IP Address for the simulation                         	| 127.0.0.1 etc.            	|
@@ -101,6 +102,7 @@ notepad config.cfg (#for windows)
 | load_data_path 	| The path to load the data from into the replay memory 	| Relative path to the data 	|
 
 ### Reinforcement Learning training parameters [RL_params]:
+
 | Parameter              	| Explanation                                                                                     	| Possible values          	|
 |------------------------	|-------------------------------------------------------------------------------------------------	|--------------------------	|
 | input_size             	| The dimensions of the input image into the network                                              	| Any positive integer     	|
