@@ -85,6 +85,7 @@ notepad config.cfg (#for windows)
 ### General Parameters [general_params]:
 | Parameter        	| Explanation                                                                       	| Possible values                  	|
 |------------------	|-----------------------------------------------------------------------------------	|----------------------------------	|
+
 | run_name         	| Name for the current                                                              	| Any value                        	|
 | custom_load      	| Dictates if user wants to load the network with custom weights                    	| True/False                       	|
 | custom_load_path 	| If custom_load is set to True, this dictates the path of the weights to be loaded 	| Relative path to weights         	|
@@ -155,6 +156,7 @@ cd models/trained/Indoor/indoor_long/Imagenet/
 tensorboard --logdir <train_type>                # Generic
 tensorboard --logdir e2e                         # Example
 ```
+
 The terminal will display the local URL that can be opened up on any browser, and the tensorboard display will appear plotting the DRL parameters on run-time.
 ![tensorboard](/images/tf.png)
 
