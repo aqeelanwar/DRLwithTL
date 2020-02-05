@@ -198,6 +198,8 @@ custom_load_path: <path_to_weights>
 #### Output graphs
 The simulation updates two graphs in real-time. The first graph is the altitude variation of the drone, while the other one is the drone trajectory mapped onto the environment floorplan. The trajectory graph also reports the total distance traveled by the drone before crash.
 
+![Inference graphs](/images/infer.gif)
+
 #### Run-time controls using PyGame screen
 Right now the simulation supports only the following two functionalities (other functionalities can be added by modifying the check_user_input module in the aux_function.py file for the phase infer)
 
