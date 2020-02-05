@@ -1,10 +1,6 @@
-# Branch - DFA Implementation
 import sys
 from network.agent import DeepAgent
 from environments.initial_positions import *
-import matplotlib.pyplot as plt
-import numpy as np
-import seaborn as sns
 import psutil
 from os import getpid
 from network.Memory import Memory
@@ -29,7 +25,7 @@ screen = pygame_connect(phase = cfg.phase)
 # Load the initial positions for the environment
 reset_array, level_name, crash_threshold, initZ = initial_positions(cfg.env_name)
 
-#Generate path where the weighst will be saved
+# Generate path where the weighst will be saved
 cfg = save_network_path(cfg=cfg)
 
 # Replay Memory for RL
@@ -53,7 +49,6 @@ elif cfg.phase == 'infer':
     f_z, fig_z, ax_z, line_z, fig_nav, ax_nav, nav = initialize_infer(env_cfg=env_cfg, client=client, env_folder=env_folder)
     nav_text = ax_nav.text(0, 0, '')
 
-
 # Initialize variables
 iter = 0
 num_collisions = 0
@@ -61,12 +56,12 @@ episode = 0
 active = True
 
 automate = True
-choose=False
-print_qval=False
-last_crash=0
+choose = False
+print_qval = False
+last_crash = 0
 ret = 0
 distance = 0
-switch_env=False
+switch_env = False
 level = 0
 times_switch = 0
 save_posit = old_posit
@@ -213,24 +208,23 @@ while active:
 
                 if crash:
                     agent.return_plot(ret, episode, int(level/3), mem_percent, iter, distance)
-                    ret=0
-                    distance=0
+                    ret = 0
+                    distance = 0
                     episode = episode + 1
-                    last_crash=0
+                    last_crash = 0
 
                     reset_to_initial(level, reset_array, client)
                     time.sleep(0.2)
-                    current_state =agent.get_state()
+                    current_state = agent.get_state()
                 else:
                     current_state = new_state
 
-
-                if iter%cfg.switch_env_steps==0:
-                    switch_env=True
+                if iter%cfg.switch_env_steps == 0:
+                    switch_env = True
                 else:
-                    switch_env=False
+                    switch_env = False
 
-                if iter%cfg.max_iters==0:
+                if iter % cfg.max_iters == 0:
                     automate=False
 
                 # if iter >140:
