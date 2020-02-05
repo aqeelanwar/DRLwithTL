@@ -97,6 +97,7 @@ notepad config.cfg (#for windows)
 
 | Parameter      	| Explanation                                           	| Possible values           	|
 |----------------	|-------------------------------------------------------	|---------------------------	|
+
 | ip_address     	| IP Address for the simulation                         	| 127.0.0.1 etc.            	|
 | load_data      	| Dictates if to load data into the replay memory       	| True / False              	|
 | load_data_path 	| The path to load the data from into the replay memory 	| Relative path to the data 	|
