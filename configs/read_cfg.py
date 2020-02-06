@@ -13,7 +13,7 @@ def read_env_cfg(config_filename = 'configs/main.cfg'):
     config.read(config_filename)
 
     cfg.run_name = config.get('general_params', 'env_name')
-    cfg.custom_load_path = str(config.get('general_params', 'floorplan'))
+    cfg.floorplan = str(config.get('general_params', 'floorplan'))
     cfg.o_x = float(config.get('general_params', 'o_x').split(',')[0])
     cfg.o_y = float(config.get('general_params', 'o_y').split(',')[0])
     cfg.alpha = float(config.get('general_params', 'alpha').split(',')[0])
@@ -69,7 +69,7 @@ def read_cfg(config_filename = 'configs/main.cfg', verbose = False):
     cfg.update_target_interval = int(config.get('RL_params', 'update_target_interval').split(',')[0])
 
 
-    if verbose:
+    if verbose and cfg.phase=='train':
         print('------------------------------ Config File ------------------------------')
         for param in cfg:
             spaces = ' '*(30-len(param))

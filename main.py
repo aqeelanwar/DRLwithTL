@@ -46,7 +46,7 @@ elif cfg.phase == 'infer':
     nav_x=[]
     nav_y=[]
     altitude=[]
-    f_z, fig_z, ax_z, line_z, fig_nav, ax_nav, nav = initialize_infer(env_cfg=env_cfg, client=client, env_folder=env_folder)
+    p_z, fig_z, ax_z, line_z, fig_nav, ax_nav, nav = initialize_infer(env_cfg=env_cfg, client=client, env_folder=env_folder)
     nav_text = ax_nav.text(0, 0, '')
 
 # Initialize variables
@@ -239,14 +239,14 @@ while active:
                     client.moveByVelocityAsync(vx=0, vy=0, vz=0, duration=1).join()
                     ax_nav.plot(nav_x.pop(), nav_y.pop(), 'r*', linewidth=20)
                     file_path = env_folder + 'results/'
-                    fig_z.savefig(file_path + 'altitude_variation.png', dpi=1000)
-                    fig_nav.savefig(file_path + 'navigation.png', dpi=1000)
-
+                    fig_z.savefig(file_path + 'altitude_variation.png', dpi=500)
+                    fig_nav.savefig(file_path + 'navigation.png', dpi=500)
+                    close_env(env_process)
                     print('Figures saved')
                 else:
                     posit = agent.client.simGetVehiclePose()
                     distance = distance + np.linalg.norm(np.array([old_posit.position.x_val-posit.position.x_val,old_posit.position.y_val-posit.position.y_val]))
-                    altitude.append(-posit.position.z_val-f_z)
+                    altitude.append(-posit.position.z_val+p_z)
 
                     x_val = posit.position.x_val
                     y_val = posit.position.y_val

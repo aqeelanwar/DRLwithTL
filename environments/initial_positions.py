@@ -79,7 +79,7 @@ def indoor_complex():
     ]
     level_name = ['Complex1', 'Complex2', 'Complex3', 'Complex4']
     crash_threshold = 0.07
-    initZ = -2
+    initZ = 0
     return orig_ip, level_name, crash_threshold, initZ
 
 # Test condo indoor initial positions
@@ -115,7 +115,7 @@ def indoor_vanleer():
     # The environment can be downloaded from
     # https://drive.google.com/drive/u/2/folders/1u5teth6l4JW2IXAkZAg1CbDGR6zE-v6Z
     orig_ip = [
-        [-3080, -4280, 90],  #Player Start
+        [-3100, -4530, 90],  #Player Start
         [-1340, -2240, -90],
         [-3790, -5450, 180],
         [-3980, -1760, -90]

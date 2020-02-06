@@ -6,7 +6,7 @@ The repository containing the code for **real** environment on a **real** DJI Te
 
 
 ![Cover Photo](/images/cover.png)
-
+![Cover Photo](/images/depth.gif)
 ![Cover Photo](/images/envs.png)
 
 

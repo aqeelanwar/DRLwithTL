@@ -2,7 +2,7 @@
 # Created: 10/14/2019, 12:50 PM
 # Email: aqeel.anwar@gatech.edu
 import numpy as np
-import os, subprocess
+import os, subprocess, psutil
 import math
 import random
 import time
@@ -10,6 +10,15 @@ import airsim
 import pygame
 from configs.read_cfg import read_cfg
 import matplotlib.pyplot as plt
+
+
+def close_env(env_process):
+    process = psutil.Process(env_process.pid)
+    for proc in process.children(recursive=True):
+        proc.kill()
+    process.kill()
+
+
 
 def save_network_path(cfg):
     # Save the network to the directory network_path
@@ -28,17 +37,21 @@ def save_network_path(cfg):
 def start_environment(env_name):
     env_folder = os.path.dirname(os.path.abspath(__file__)) + "/unreal_envs/" + env_name + "/"
     path = env_folder + env_name + ".exe"
-    # print(path)
     env_process = subprocess.Popen(path)
-    time.sleep(6)
+    time.sleep(5)
     print("Successfully loaded environment: " + env_name)
 
     return env_process, env_folder
 
 
 def initialize_infer(env_cfg, client, env_folder):
-    c_z = (env_cfg.ceiling_z - env_cfg.player_start_z) / 100
-    f_z = (env_cfg.floor_z - env_cfg.player_start_z) / 100
+
+    if not os.path.exists(env_folder+'results'):
+        os.makedirs(env_folder+'results')
+
+    # Mapping floor to 0 height
+    c_z = (env_cfg.ceiling_z-env_cfg.floor_z)/100
+    p_z = (env_cfg.player_start_z-env_cfg.floor_z)/100
 
     plt.ion()
     fig_z = plt.figure()
@@ -47,11 +60,11 @@ def initialize_infer(env_cfg, client, env_folder):
     ax_z.set_ylim(0, c_z)
     plt.title("Altitude variation")
 
-    start_posit = client.simGetVehiclePose()
+    # start_posit = client.simGetVehiclePose()
 
     fig_nav = plt.figure()
     ax_nav = fig_nav.add_subplot(111)
-    img = plt.imread(env_folder+ "floor.png")
+    img = plt.imread(env_folder+ env_cfg.floorplan)
     ax_nav.imshow(img)
     plt.axis('off')
     plt.title("Navigational map")
@@ -59,7 +72,7 @@ def initialize_infer(env_cfg, client, env_folder):
     nav, = ax_nav.plot(env_cfg.o_x, env_cfg.o_y)
 
 
-    return f_z, fig_z, ax_z, line_z, fig_nav, ax_nav, nav
+    return p_z, fig_z, ax_z, line_z, fig_nav, ax_nav, nav
 
 def translate_action(action, num_actions):
     # action_word = ['Forward', 'Right', 'Left', 'Sharp Right', 'Sharp Left']
@@ -185,7 +198,7 @@ def connect_drone(ip_address='127.0.0.0', phase='infer'):
     old_posit = client.simGetVehiclePose()
     if phase == 'train':
         client.simSetVehiclePose(
-            airsim.Pose(airsim.Vector3r(0, 0, -2.2), old_posit.orientation),
+            airsim.Pose(airsim.Vector3r(0, 0, 0), old_posit.orientation),
             ignore_collison=True)
     elif phase == 'infer':
         client.enableApiControl(True)
