@@ -1,3 +1,5 @@
+> **_NOTE:_**  This repository will no longer be updated and has been made a part of a larger repository [PEDRA](https://aqeelanwar.github.io/PEDRA/). You are advised to used PEDRA instead of this repository.
+
 # Deep Reinforcement Learning with Transfer Learning - Simulated Drone and Environment (DRLwithTL-Sim)
 
 # What is DRLwithTL-Sim?
