@@ -63,7 +63,7 @@ def indoor_meta():
                     'GT1', 'GT2', 'GT3',
                 ]
     crash_threshold = 0.07
-    initZ = -1
+    initZ = 0
     return orig_ip, level_name, crash_threshold, initZ
 
 
@@ -94,7 +94,21 @@ def indoor_cloud():
     ]
     level_name = ['Condo1', 'Condo2', 'Condo3', 'Condo4']
     crash_threshold = 0.07
-    initZ = -2
+    initZ = 0
+    return orig_ip, level_name, crash_threshold, initZ
+
+def indoor_gt():
+    # The environment can be downloaded from
+    # https://drive.google.com/drive/u/2/folders/1u5teth6l4JW2IXAkZAg1CbDGR6zE-v6Z
+    orig_ip = [
+        [-30, 460, 0],  # Player start
+        [640, 900, 270],
+        [-130, -1600, 200],
+        [-1000, 350, 200]
+    ]
+    level_name = ['GT1', 'GT2', 'GT3', 'GT4']
+    crash_threshold = 0.07
+    initZ = 0
     return orig_ip, level_name, crash_threshold, initZ
 
 def indoor_techno():
@@ -108,7 +122,7 @@ def indoor_techno():
     ]
     level_name = ['Techno1', 'Techno2', 'Techno3', 'Techno4']
     crash_threshold = 0.07
-    initZ = -2
+    initZ = 0
     return orig_ip, level_name, crash_threshold, initZ
 
 def indoor_vanleer():
@@ -122,7 +136,7 @@ def indoor_vanleer():
     ]
     level_name = ['VanLeer1', 'VanLeer2', 'VanLeer3', 'VanLeer4']
     crash_threshold = 0.07
-    initZ = -1
+    initZ = 0
     return orig_ip, level_name, crash_threshold, initZ
 
 def indoor_long():
@@ -138,7 +152,7 @@ def indoor_long():
     ]
     level_name = ['Long1', 'Long2', 'Long3', 'Long4', 'Long5', 'Long6']
     crash_threshold = 0.07
-    initZ = -1
+    initZ = 0
     return orig_ip, level_name, crash_threshold, initZ
 
 def indoor_pyramid():
@@ -152,7 +166,7 @@ def indoor_pyramid():
     ]
     level_name = ['Pyramid1', 'Pyramid2', 'Pyramid3', 'Pyramid4']
     crash_threshold = 0.07
-    initZ = -1
+    initZ = 0
     return orig_ip, level_name, crash_threshold, initZ
 
 
@@ -167,7 +181,7 @@ def indoor_frogeyes():
     ]
     level_name = ['Pyramid1', 'Pyramid2', 'Pyramid3', 'Pyramid4']
     crash_threshold = 0.07
-    initZ = -1
+    initZ = 0
     return orig_ip, level_name, crash_threshold, initZ
 
 
@@ -182,7 +196,7 @@ def indoor_twist():
     ]
     level_name = ['Twist1', 'Twist2', 'Twist3', 'Twist4']
     crash_threshold = 0.07
-    initZ = -1
+    initZ = 0
     return orig_ip, level_name, crash_threshold, initZ
 
 
@@ -194,7 +208,7 @@ def indoor_pretzel():
                 ]
     level_name = ['Cloud1', 'Cloud2', 'Cloud3']
     crash_threshold = 0.07
-    initZ = -1.5
+    initZ = 0
     return orig_ip, level_name, crash_threshold, initZ
 
 def initial_positions(name):
