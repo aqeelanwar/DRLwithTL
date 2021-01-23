@@ -2,7 +2,7 @@
 *.pyc
 *.xml
 .idea/
-models/
+models/trained/
 unreal_envs/
 scratch.py
 
